@@ -1,0 +1,31 @@
+<p>
+    about works!
+</p>
+
+<!-- <p>I'm done here. <a href="" (click)="sendMeHome()"><strong>Take me back</strong></a></p>
+<p><a href="" (click)="sendMeToContact()"><strong>Take me to Contacts</strong></a></p> -->
+
+<h1>Pipes and Filters</h1>
+<h2>Uppercase Pipe</h2>
+<p>{{ title | uppercase }}</p>
+<h2>Lowercase Pipe</h2>
+<p>{{ title | lowercase }}</p>
+<h2>Currency Pipe</h2>
+<p>{{ price | currency:"EUR" }}</p>
+<p>{{ price | currency:"USD":false }}</p>
+<h2>Date Pipe</h2>
+<p>{{ today | date:'d/M/y' }}</p>
+<p>{{ today | date:shorttime }}</p>
+<h2>JSON Pipe</h2>
+<p>{{ jsonval | json }}</p>
+<h2>Percent Pipe</h2>
+<p>{{ 00.54565 | percent }}</p>
+<h2>Slice Pipe</h2>
+<p>{{ months | slice:2:6 }}</p>
+<h2>Custom Pipe - Sqrt</h2>
+<p>{{ 625 | sqrt }}</p>
+<p>{{ 25 | sqrt }}</p>
+<p>{{ 169 | sqrt }}</p>
+
+<p>{{ 1234 | appendCurrency:'USD' }}</p>
+<p>{{ 1234 | appendCurrency:'EUR' }}</p>

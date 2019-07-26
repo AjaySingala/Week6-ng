@@ -1,0 +1,39 @@
+<input type="text" [(ngModel)]="btnText" placeholder="<Enter a name>">
+<button (click)="showMessage()">Click Me!</button>
+<p>{{ btnText }}</p>
+
+<h1>Directives</h1>
+<div appCard>
+    This is a sample card text. The background color is gray.
+</div>
+
+<button (click)="getUsers()">Get Users</button>
+<h2>Users</h2>
+<ul *ngIf="newUsers">
+    <li *ngFor="let usr of newUsers">
+        <p>{{ usr.first_name }} {{ usr.last_name }}</p>
+    </li>
+</ul>
+
+
+<button (click)="getDataFromService()">Get Data</button>
+<h2>Users</h2>
+<ul *ngIf="users">
+    <li *ngFor="let usr of users.data">
+        <img [src]="usr.avatar">
+        <p>{{ usr.first_name }} {{ usr.last_name }}</p>
+    </li>
+</ul>
+
+<h1 [ngClass]="{
+    'gray': h1Style, 
+    'large': !h1Style
+}">Inside the Home Component</h1>
+
+<h2 [ngStyle]="{
+    'color': h1Style ? 'gray' : 'blue',
+    'font-size':! h1Style ? '6em' : '2em'
+}">This is Header-2</h2>
+
+
+<p>{{ message }}</p>
