@@ -1,7 +1,7 @@
 class Student {
     fullName: string;
 
-    constructor(private firstName: string, public lastName: string) {
+    constructor(public firstName: string, public lastName: string) {
         this.fullName = firstName + " " + lastName;
     }
 }
@@ -9,6 +9,7 @@ class Student {
 interface IPerson {
     firstName: string;
     lastName: string;
+//    city: string;
 }
 
 function greeter(person: IPerson): string {
@@ -18,4 +19,5 @@ function greeter(person: IPerson): string {
 let user = new Student("Mary", "Jane");
 
 //document.getElementById("greeter").innerHTML = greeter(user);
-//console.log(greeter(user));
+console.log(greeter(user));
+console.log(user.firstName);

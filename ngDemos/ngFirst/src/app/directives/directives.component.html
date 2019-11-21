@@ -10,7 +10,8 @@
 <ul *ngFor="let group of peopleByCountry">
     <li>{{ group.country }}</li>
     <ul>
-        <li *ngFor="let person of group.people">{{ person.firstname }} {{ person.lastname }}
+        <li *ngFor="let person of group.people">
+            {{ person.firstname }} {{ person.lastname }}
         </li>
     </ul>
 </ul>
@@ -30,13 +31,13 @@
 <h4>NgSwitch - NgIf</h4>
 <ul *ngFor="let group of peopleByCountry">
     <li *ngFor="let person of group.people">
-        <div *ngIf="group.country ==='UK'">{{ person.firstname }} ({{ group.country }})
+        <div *ngIf="group.country ==='UK'">United Kingdom: {{ person.firstname }} ({{ group.country }})
         </div>
-        <div *ngIf="group.country === 'USA'">{{ person.firstname }} ({{ group.country }})
+        <div *ngIf="group.country === 'USA'">United States: {{ person.firstname }} ({{ group.country }})
         </div>
-        <div *ngIf="group.country === 'HK'">{{ person.firstname }} ({{ group.country }})
+        <div *ngIf="group.country === 'HK'">Hong Kong: {{ person.firstname }} ({{ group.country }})
         </div>
-        <div *ngIf="group.country !== 'HK' && group.country !== 'UK' && group.country !== 'USA'">{{ person.firstname }} ({{ group.country }})
+        <div *ngIf="group.country !== 'HK' && group.country !== 'UK' && group.country !== 'USA'">All others: {{ person.firstname }} ({{ group.country }})
         </div>
     </li>
 </ul>
@@ -44,13 +45,13 @@
 <h4>NgSwitch</h4>
 <ul *ngFor="let group of peopleByCountry" [ngSwitch]="group.country">
     <div *ngFor="let person of group.people">
-        <li *ngSwitchCase="'UK'">{{ person.firstname }} ({{ group.country }})
+        <li *ngSwitchCase="'UK'">United Kingdom: {{ person.firstname }} ({{ group.country }})
         </li>
-        <li *ngSwitchCase="'US'">{{ person.firstname }} ({{ group.country }})
+        <li *ngSwitchCase="'US'">United States: {{ person.firstname }} ({{ group.country }})
         </li>
-        <li *ngSwitchCase="'HK'">{{ person.firstname }} ({{ group.country }})
+        <li *ngSwitchCase="'HK'">Hong Kong: {{ person.firstname }} ({{ group.country }})
         </li>
-        <li *ngSwitchDefault>{{ person.firstname }} ({{ group.country }})
+        <li *ngSwitchDefault>All others: {{ person.firstname }} ({{ group.country }})
         </li>
     </div>
 </ul>

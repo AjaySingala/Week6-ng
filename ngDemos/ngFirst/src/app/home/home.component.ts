@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { User } from '../user';
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   btnText = '';
   users: object;
   newUsers: User[] = [];
+  repos: Repo[] = [];
 
   constructor(private dataSvc: DataService, private user: User) { }
 
@@ -31,17 +33,26 @@ export class HomeComponent implements OnInit {
 
   getUsers() {
 
-    // // if you use dataSvc.getUserList():
+    // // if you use dataSvc.getUser():
     // this.dataSvc.getUsers()
     //   .subscribe(data => {
+    //     console.log(data);
     //     this.newUsers = data.data;
-    //     console.log(newUsers);
+    //     console.log(this.newUsers);
     //   });
-          
-    // If you use either dataSvc.getData() or dataSvc.getUsers():
+
+  //   // if you use dataSvc.getUserList():
+  //   this.dataSvc.getUserList()
+  //     .subscribe(data => {
+  //       console.log(data[0]);
+  //       this.newUsers = data[0].data;
+  //       console.log(this.newUsers);
+  // });
+
+    // If you use dataSvc.getUsers():
     this.dataSvc.getUsers()
-      .subscribe(data => {
-        data.data.forEach((item, index) => {
+      .subscribe(d => {
+        d.data.forEach((item, index) => {
           //// If you use dataSvc.getData():
           // var u = new User();
           // u.first_name = item.first_name;
@@ -54,9 +65,21 @@ export class HomeComponent implements OnInit {
           console.log("Item: " + item.first_name);
         });
 
-        console.log(data.data);
-        console.log(this.newUsers);
+        console.log("data.data: ", d.data);
+        console.log("this.newUsers", this.newUsers);
       });
+  }
+
+  
+  getRepoList() {
+    // if you use dataSvc.getRepoList():
+    this.dataSvc.getRepoList()
+      .subscribe(data => {
+        console.log('data:', data);
+        console.log('data[0]:', data[0]);
+        this.repos = data;
+        console.log('Repos:', this.repos);
+  });
   }
 
   showMessage() {

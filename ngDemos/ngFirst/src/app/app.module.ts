@@ -19,6 +19,7 @@ import { PersonparentComponent } from './personparent/personparent.component';
 import { Person } from './person';
 import { DirectivesComponent } from './directives/directives.component';
 import { CardHoverDirective } from './card-hover-directive';
+import { Repo } from './repo';
 
 // import { RouterModule } from '@angular/router';
 
@@ -45,7 +46,7 @@ import { CardHoverDirective } from './card-hover-directive';
     ReactiveFormsModule,
     routingModule
   ],
-  providers: [DataService, User, Person],
+  providers: [DataService, User, Person, Repo],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

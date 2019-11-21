@@ -1,5 +1,18 @@
-"use strict";
-exports.__esModule = true;
-var timesTwo_1 = require("./timesTwo");
-var u = new timesTwo_1.Useful();
+var Utility;
+(function (Utility) {
+    var Useful = /** @class */ (function () {
+        function Useful() {
+        }
+        Useful.prototype.timesTwo = function (n) {
+            return n * 2;
+        };
+        return Useful;
+    }());
+    Utility.Useful = Useful;
+})(Utility || (Utility = {}));
+//console.log(timesTwo(10));
+//import { Useful } from './timesTwo';
+///<reference path="timesTwo.ts" />
+var u = new Utility.Useful();
+//console.log(timesTwo(10));
 console.log(u.timesTwo(10));

@@ -8,6 +8,6 @@ export class CardHoverDirective {
         private renderer: Renderer2) {
         const el = this.elem.nativeElement;
         // el.style.background = 'gray';
-        renderer.setStyle(el, 'background', 'gray');
+        renderer.setStyle(el, 'background', 'red');
     }
 }

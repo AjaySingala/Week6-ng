@@ -1,11 +1,12 @@
 class Person {
     public firstName: string;
     public lastName: string;
-    //private _fullName: string;
+    private _fullName: string;
 
     constructor(firstName: string, lastName: string) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this._fullName = this.fullName();
     }
 
     fullName(): string {
@@ -15,5 +16,6 @@ class Person {
 
 var obj = new Person('John', "Smith");
 console.log(obj.fullName());
-//console.log(obj.firstName + " " + obj.lastName);
+console.log(obj.firstName + " " + obj.lastName);
+//console.log(obj._fullName);
 

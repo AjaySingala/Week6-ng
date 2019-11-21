@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
+import { Repo } from './repo';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,8 @@ export class DataService {
 
   // If it was returning a pure "User" object, i.e.; only the 
   // "data" array property of the api result:
-  getUserList() {
+  getRepoList() {
     // console.log('DataService.getData() called...');
-    return this.http.get<User[]>('https://reqres.in/api/users');
+    return this.http.get<Repo[]>('https://api.github.com/users/hadley/repos');
   }
 }

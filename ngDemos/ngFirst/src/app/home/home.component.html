@@ -7,6 +7,15 @@
     This is a sample card text. The background color is gray.
 </div>
 
+<button (click)="getDataFromService()">Get Data</button>
+<h2>Users</h2>
+<ul *ngIf="users">
+    <li *ngFor="let usr of users.data">
+        <img [src]="usr.avatar">
+        <p>{{ usr.first_name }} {{ usr.last_name }}</p>
+    </li>
+</ul>
+
 <button (click)="getUsers()">Get Users</button>
 <h2>Users</h2>
 <ul *ngIf="newUsers">
@@ -15,13 +24,11 @@
     </li>
 </ul>
 
-
-<button (click)="getDataFromService()">Get Data</button>
-<h2>Users</h2>
-<ul *ngIf="users">
-    <li *ngFor="let usr of users.data">
-        <img [src]="usr.avatar">
-        <p>{{ usr.first_name }} {{ usr.last_name }}</p>
+<button (click)="getRepoList()">Get List of Repos</button>
+<h2>Repos</h2>
+<ul *ngIf="repos">
+    <li *ngFor="let repo of repos">
+        <p><strong>Name:</strong> {{ repo.full_name }} <strong>URL:</strong> {{ repo.git_url }}</p>
     </li>
 </ul>
 
@@ -32,8 +39,9 @@
 
 <h2 [ngStyle]="{
     'color': h1Style ? 'gray' : 'blue',
-    'font-size':! h1Style ? '6em' : '2em'
+    'font-size': !h1Style ? '6em' : '2em'
 }">This is Header-2</h2>
+<button (click)="showMessage()">Click Me!</button>
 
 
 <p>{{ message }}</p>

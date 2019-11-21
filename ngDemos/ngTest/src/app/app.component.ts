@@ -11,4 +11,8 @@ export class AppComponent {
   foo() {
     return 'OK';
   }
+
+  getData() {
+    return 111;
+  }
 }

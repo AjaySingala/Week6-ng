@@ -11,6 +11,8 @@ Sample.message = "This is a test message";
 console.log(Sample.message);
 
 function foo() {
+    console.log('In foo()...');
+
     var n: number = 10;
     var name: string = "John";
     var isValid: Boolean = true;
@@ -25,12 +27,13 @@ function foo() {
     console.log(name);
 }
 
-interface Person {
+interface IPerson {
     name: string;
     age: number;
 }
 
-function printName(person: Person) {
+function printName(person: IPerson) {
+    console.log('In printName()...');
     console.log(person.name);
 }
 
