@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../person';
 
 @Component({
@@ -8,11 +8,20 @@ import { Person } from '../person';
 })
 export class PersonchildComponent implements OnInit {
   @Input() person: Person;
-  @Input('master') mastername: string;
+  // @Input('master') mastername: string;
+  @Input() childExample: string;
+
+  // Pass data back from child to parent.
+  @Output() exampleOutput = new EventEmitter<string>();
+  exampleChild: string = 'This is from child to parent using @Output() decorator.';
 
   constructor() {}
 
   ngOnInit() {
     // console.log(this.person);
+  }
+
+  exampleMethodChild() {
+    this.exampleOutput.emit(this.exampleChild);
   }
 }

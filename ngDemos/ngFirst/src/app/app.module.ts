@@ -20,6 +20,7 @@ import { Person } from './person';
 import { DirectivesComponent } from './directives/directives.component';
 import { CardHoverDirective } from './card-hover-directive';
 import { Repo } from './repo';
+import { ChildComponent } from './child/child.component';
 
 // import { RouterModule } from '@angular/router';
 
@@ -36,7 +37,8 @@ import { Repo } from './repo';
     PersonchildComponent,
     PersonparentComponent,
     DirectivesComponent,
-    CardHoverDirective
+    CardHoverDirective,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

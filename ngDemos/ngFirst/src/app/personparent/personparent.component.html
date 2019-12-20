@@ -2,5 +2,7 @@
 
 <h2>There are <span>{{people.length}}</span> people</h2>
 <h3>{{master}}</h3>
-<app-personchild *ngFor="let p of people" [person]="p" [master]="mastername">
+<h3 style="background-color: cyan;">{{ exampleParent }}</h3>
+<!-- <app-personchild *ngFor="let p of people" [person]="p" [master]="mastername" [childExample]="parentExample"> -->
+<app-personchild *ngFor="let p of people" [person]="p" [childExample]="parentExample" (exampleOutput)="exampleMethodParent($event)">
 </app-personchild>
